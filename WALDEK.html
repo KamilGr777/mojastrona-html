@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankieta</title>
+    <style>
+        body {
+            background-color: #e6f7ff; /* Kolor tła */
+            background-image: url('sciezka/do/logo.png'); /* Ścieżka do logo butelek */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .ankieta {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4caf50; /* Zielony kolor przycisku */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Ciemniejszy odcień zielonego przy najechaniu myszką */
+        }
+
+        .wynik {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ankieta" id="ankieta1">
+    <h2>Czy Waldek chlu?</h2>
+    <button onclick="sprawdzOdpowiedz('TAK', 'ankieta1')">TAK</button>
+    <button onclick="sprawdzOdpowiedz('NIE', 'ankieta1')">NIE</button>
+    <div class="wynik" id="wynik1"></div>
+</div>
+
+<div class="ankieta" id="ankieta2">
+    <h2>Czy dama z czwartego piętra jest gruba?</h2>
+    <button onclick="sprawdzOdpowiedz('AZ ZA BARDZO', 'ankieta2')">AZ ZA BARDZO</button>
+    <button onclick="sprawdzOdpowiedz('CO TY TO MODELKA', 'ankieta2')">CO TY TO MODELKA</button>
+    <div class="wynik" id="wynik2"></div>
+</div>
+
+<script>
+    function sprawdzOdpowiedz(poprawnaOdpowiedz, idAnkiety) {
+        var wynikDiv = document.getElementById('wynik' + idAnkiety.substring(7));
+        wynikDiv.innerHTML = 'Poprawna odpowiedź: ' + poprawnaOdpowiedz;
+    }
+</script>
+
+</body>
+</html>
